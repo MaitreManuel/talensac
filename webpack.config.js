@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "production") plugins.push(new UglifyJsPlugin());
 module.exports = {
     entry: {
         application: [
-            "./src/AppBundle/Resources/application.js",
+            "./src/AppBundle/Resources/components/application.js",
             "./src/AppBundle/Resources/assets/common.js"
         ],
     },
@@ -36,7 +36,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: [nodeModules],
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -72,13 +72,40 @@ module.exports = {
                 options: {
                     prefix: 'font/'
                 }
+            }, {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            hash: 'sha512',
+                            digest: 'hex',
+                            name: '[name].[ext]'
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            includePaths: [
+                                path.resolve(resources , '/public/')
+                            ],
+                            gifsicle: {
+                                interlaced: false
+                            },
+                            bypassOnDebug: true,
+                            optipng: {
+                                optimizationLevel: 7
+                            }
+                        }
+                    }
+                ]
             }
         ]
     },
     plugins,
     devtool: "eval-source-map",
     devServer: {
-        contentBase: path.join(__dirname, "web/compiled"),
+        contentBase: path.join(__dirname, "web"),
         compress: true,
         port: 9000
     },
