@@ -1,15 +1,12 @@
 @import 'typography';
 @import 'variables';
 // Bootstrap
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/bootstrap-reboot';
-@import '~bootstrap/scss/bootstrap-grid';
-@import '~bootstrap/scss/utilities';
-@import '~bootstrap/scss/nav';
+@import "~bootstrap/scss/bootstrap";
 
 @import 'tool/animation';
 
+@import 'Common/header';
+@import 'Common/footer';
 @import 'History/history_index';
 
 html {
@@ -20,4 +17,19 @@ body {
     color: $white;
     font-family: $josefin;
     overflow: hidden;
+}
+.opacity-dark {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.opacity-medium {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.p-absolute {
+    position: absolute;
+}
+.p-fixed {
+    position: fixed;
+}
+.p-relative {
+    position: relative;
 }

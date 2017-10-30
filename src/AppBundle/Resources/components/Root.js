@@ -8,7 +8,9 @@ class Root extends React.Component {
     render() {
         return (
             <section id="Root">
+                <Header/>
                 <History/>
+                <Footer/>
             </section>
         );
     }

@@ -3,9 +3,13 @@ var React = require("react");
 class Footer extends React.Component {
     render() {
         return (
-            <section id="Footer">
-                <h1>Footer</h1>
-            </section>
+            <footer id="Footer" className="container-fluid p-relative opacity-dark">
+                <div className="row">
+                    <div className="col-12 text-center">
+                        <span><i className="fa fa-copyright" aria-hidden="true"></i> 2017 - Trystan Eveno</span>
+                    </div>
+                </div>
+            </footer>
         );
     }
 }

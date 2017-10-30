@@ -1,31 +1,58 @@
 import React from "react";
 
 class Header extends React.Component {
+    componentDidMount() {
+        var toggle_menu_elem = document.getElementById('toggle-menu');
+
+        window.addEventListener('orientationchange', () => {
+            this.toggle_menu('ort_chg');
+        });
+
+        if(toggle_menu_elem && toggle_menu_elem !== null && toggle_menu_elem !== undefined) {
+            toggle_menu_elem.addEventListener('click', () => {
+                this.toggle_menu();
+            });
+        }
+    }
+
+    toggle_menu(trigger) {
+        var this_class = 'open',
+            toggle = document.getElementById('toggle-menu');
+
+        toggle.classList.toggle(this_class);
+
+        if (toggle.classList.contains(this_class) && trigger === 'ort_chg') {
+            toggle.classList.toggle(this_class);
+        }
+    }
+
     render() {
         return (
-            <header id="Header">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#">Navbar</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Features</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <header id="Header" className="p-relative">
+                <nav className="navbar navbar-expand-lg navbar-dark opacity-dark">
+                    <button id="toggle-menu" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <a className="navbar-brand" href="#">TALENSAC</a>
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <a className="nav-link fadein" href="#">Actualités</a>
+                            </li>
+                            <li className="nav-item active">
+                                <a className="nav-link fadein" href="#">Histoire</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link fadein" href="#">De nos jours</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link fadein" href="#">Commerces</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </header>
         );
     }
