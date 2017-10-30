@@ -6,14 +6,14 @@ class Root extends React.Component {
         var scene = document.getElementById('scene'),
             parallaxInstance = new Parallax(scene);
 
-        parallaxInstance.limit(20, 0);
+        parallaxInstance.limit(30, 15);
     }
     render() {
         return (
             <section id="History">
                 <div id="scene" className="scene">
-                    <div data-depth="0.6"><img src="/bundles/marche.jpg" alt=""/></div>
-                    {/* <div data-depth="0.2"><img src="/bundles/prehaut.png" alt=""/></div> */}
+                    <div className="img background" data-depth="0.2"></div>
+                    <div className="img marche" data-depth="0.6"></div>
                 </div>
             </section>
         );

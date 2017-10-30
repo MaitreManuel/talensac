@@ -72,33 +72,6 @@ module.exports = {
                 options: {
                     prefix: 'font/'
                 }
-            }, {
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            hash: 'sha512',
-                            digest: 'hex',
-                            name: '[name].[ext]'
-                        }
-                    },
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            includePaths: [
-                                path.resolve(resources , '/public/')
-                            ],
-                            gifsicle: {
-                                interlaced: false
-                            },
-                            bypassOnDebug: true,
-                            optipng: {
-                                optimizationLevel: 7
-                            }
-                        }
-                    }
-                ]
             }
         ]
     },
@@ -107,6 +80,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, "web"),
         compress: true,
-        port: 9000
+        port: 9000,
+        host: "0.0.0.0"
     },
 };
