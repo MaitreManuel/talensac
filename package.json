@@ -7,7 +7,7 @@
         "build": "webpack",
         "build:watch": "webpack --watch",
         "clean": "rm -rf node_modules && rm -rf web/compiled/* && npm install",
-        "deploy": "git add -A && git commit -m ':rocket: deploy' && git push && git subtree push --prefix dist origin gh-pages",
+        "deploy": "git add -A && git commit -m ':rocket: deploy' && git push && git subtree push --prefix web origin gh-pages",
         "install": "npm run build",
         "start": "webpack-dev-server"
     },
