@@ -3,6 +3,39 @@
     background-position: top center;
     background-size: cover;
     height: calc(100vh - 80px);
+    .scene {
+        height: 100%;
+        margin-left: -5%;
+        margin-top: -1%;
+        width: 100%;
+        .img {
+            background-position: center top;
+            &.background {
+                background: url('/bundles/background.jpg');
+                background-size: cover;
+                height: 75%;
+                @media all and (min-width: 1201px) {
+                    width: 65%;
+                }
+                @media all and (min-width: 769px) and (max-width: 1200px) {
+                    width: 100%;
+                }
+                @media all and (max-width: 768px) {
+                    width: 110%;
+                }
+            }
+            &.marche {
+                background: url('/bundles/marche.png');
+                background-size: cover;
+                height: 110%;
+                width: 110%;
+                @media all and (max-width: 768px) {
+                    height: 110%;
+                    width: 110%;
+                }
+            }
+        }
+    }
     .wrapper-content {
         height: 100%;
     }
@@ -11,38 +44,5 @@
         left: 0;
         top: 0;
         width: 100%;
-        .scene {
-            height: 100%;
-            margin-left: -5%;
-            margin-top: -1%;
-            width: 100%;
-            .img {
-                background-position: center top;
-                &.background {
-                    background: url('/bundles/background.jpg');
-                    background-size: cover;
-                    height: 75%;
-                    @media all and (min-width: 1201px) {
-                        width: 65%;
-                    }
-                    @media all and (min-width: 769px) and (max-width: 1200px) {
-                        width: 100%;
-                    }
-                    @media all and (max-width: 768px) {
-                        width: 110%;
-                    }
-                }
-                &.marche {
-                    background: url('/bundles/marche.png');
-                    background-size: cover;
-                    height: 110%;
-                    width: 110%;
-                    @media all and (max-width: 768px) {
-                        height: 110%;
-                        width: 110%;
-                    }
-                }
-            }
-        }
     }
 }

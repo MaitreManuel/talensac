@@ -45,7 +45,7 @@ class Header extends React.Component {
                                 <a className="nav-link fadein" href="#">Histoire</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link fadein" href="#">De nos jours</a>
+                                <a className="nav-link fadein" href="#">Gallerie</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link fadein" href="#">Commerces</a>
