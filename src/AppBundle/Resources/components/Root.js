@@ -1,7 +1,8 @@
 import React from "react";
 
-import Header from "./common/Header.js";
 import Footer from "./common/Footer.js";
+import Gallery from "./gallery/Main.js";
+import Header from "./common/Header.js";
 import History from "./history/Main.js";
 
 class Root extends React.Component {
@@ -9,7 +10,7 @@ class Root extends React.Component {
         return (
             <section id="Root">
                 <Header/>
-                <History/>
+                <Gallery/>
                 <Footer/>
             </section>
         );

@@ -1,0 +1,28 @@
+#Gallery {
+    height: calc(100vh - 80px);
+    .picture {
+        cursor: zoom-in;
+        display: inline-flex;
+        height: 150px;
+        margin: 15px 10px;
+        overflow: hidden;
+        width: 225px;
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+            -webkit-transition: transform .2s;
+            transition: transform .2s;
+        }
+    }
+    .scene {
+        background: url('/bundles/fond.jpg');
+        background-position: top center;
+        background-size: cover;
+    }
+}

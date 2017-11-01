@@ -5,10 +5,26 @@
 
 @import 'tool/animation';
 
-@import 'Common/header';
 @import 'Common/footer';
+@import 'Common/header';
+@import 'Common/scene';
+@import 'Gallery/gallery_index';
 @import 'History/history_index';
 
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .1);
+    &:hover {
+        width: 10px;
+    }
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .4);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
 html {
   font-size: 16px;
 }
@@ -16,16 +32,33 @@ body {
     background: $black;
     color: $white;
     font-family: $josefin;
-    overflow: hidden;
 }
 p {
     font-size: 1.3rem;
 }
 .opacity-dark {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.85);
 }
 .opacity-medium {
     background-color: rgba(0, 0, 0, 0.5);
+}
+.o-auto {
+    overflow: auto;
+}
+.ox-auto {
+    overflow: auto;
+}
+.oy-auto {
+    overflow: auto;
+}
+.o-hidden {
+    overflow: hidden;
+}
+.ox-hidden {
+    overflow: hidden;
+}
+.oy-hidden {
+    overflow: hidden;
 }
 .p-absolute {
     position: absolute;
@@ -35,4 +68,7 @@ p {
 }
 .p-relative {
     position: relative;
+}
+.wrapper-content {
+    height: 100%;
 }

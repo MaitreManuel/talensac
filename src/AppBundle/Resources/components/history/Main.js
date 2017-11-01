@@ -14,7 +14,7 @@ class Main extends React.Component {
     render() {
         return (
             <section id="History">
-                <section className="p-absolute wrapper-scene">
+                <section className="p-absolute o-hidden wrapper-scene">
                     <section id="scene" className="scene">
                         <div className="img background" data-depth="0.2"></div>
                         <div className="img marche" data-depth="0.6"></div>
@@ -24,7 +24,7 @@ class Main extends React.Component {
                     <div className="row justify-content-center">
                         <div className="col-4 d-none d-md-block mt-5">
                             <section id="butcher" className="scene">
-                                <div data-depth="0.6">
+                                <div className="text-center" data-depth="0.6">
                                     <img src="/bundles/boucher.png" alt=""/>
                                     <p>Boucher de l'ancien abattoir</p>
                                 </div>
