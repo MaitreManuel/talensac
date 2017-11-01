@@ -35,17 +35,17 @@ class Header extends React.Component {
                         <span></span>
                         <span></span>
                     </button>
-                    <a className="navbar-brand m-auto" href="">TALENSAC</a>
+                    <a className="navbar-brand m-auto mr-lg-4" href="">TALENSAC</a>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <a className="nav-link fadein" href="">Actualités</a>
-                            </li>
                             <li className="nav-item active">
                                 <a className="nav-link fadein" href="">Histoire</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link fadein" href="">Photographies</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link fadein" href="">Actualités</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link fadein" href="">Commerces</a>
