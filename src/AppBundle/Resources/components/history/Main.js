@@ -34,7 +34,7 @@ class Main extends React.Component {
                         <div className="col-4 d-none d-md-block mt-5">
                             <section id="butcher" className="scene">
                                 <div className="text-center" data-depth="0.6">
-                                    <img src="/bundles/boucher.png" alt=""/>
+                                    <img src="bundles/boucher.png" alt=""/>
                                     <p>Boucher de l'ancien abattoir</p>
                                 </div>
                             </section>
