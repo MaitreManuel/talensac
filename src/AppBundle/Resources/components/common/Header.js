@@ -2,15 +2,52 @@ import React from "react";
 
 class Header extends React.Component {
     componentDidMount() {
-        var toggle_menu_elem = document.getElementById('toggle-menu');
+        var toggle_menu_elem = document.getElementById('toggle-menu'),
+            home = document.getElementById('home'),
+            history = document.getElementById('history'),
+            gallery = document.getElementById('gallery'),
+            actualities = document.getElementById('actualities'),
+            shops = document.getElementById('shops');
 
         window.addEventListener('orientationchange', () => {
             this.toggle_menu('ort_chg');
         });
 
-        if(toggle_menu_elem && toggle_menu_elem !== null && toggle_menu_elem !== undefined) {
+        if(home && home !== null && home !== undefined) {
+            home.addEventListener('click', () => {
+                localStorage.setItem('page', 'home');
+                this.props.reload();
+            });
+        }
+
+        if(history && history !== null && history !== undefined) {
             toggle_menu_elem.addEventListener('click', () => {
-                this.toggle_menu();
+                localStorage.setItem('page', 'history');
+                this.props.reload();
+            });
+        }
+        if(history && history !== null && history !== undefined) {
+            history.addEventListener('click', () => {
+                localStorage.setItem('page', 'history');
+                this.props.reload();
+            });
+        }
+        if(gallery && gallery !== null && gallery !== undefined) {
+            gallery.addEventListener('click', () => {
+                localStorage.setItem('page', 'gallery');
+                this.props.reload();
+            });
+        }
+        if(actualities && actualities !== null && actualities !== undefined) {
+            actualities.addEventListener('click', () => {
+                localStorage.setItem('page', 'actualities');
+                this.props.reload();
+            });
+        }
+        if(shops && shops !== null && shops !== undefined) {
+            shops.addEventListener('click', () => {
+                localStorage.setItem('page', 'shops');
+                this.props.reload();
             });
         }
     }
@@ -35,20 +72,20 @@ class Header extends React.Component {
                         <span></span>
                         <span></span>
                     </button>
-                    <a className="navbar-brand m-auto mr-lg-4" href="">TALENSAC</a>
+                    <a id="home" className="navbar-brand m-auto mr-lg-4" href="javascript:void(0)">TALENSAC</a>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
-                            <li className="nav-item active">
-                                <a className="nav-link fadein" href="">Histoire</a>
+                            <li id="history" className="nav-item active">
+                                <a className="nav-link fadein" href="javascript:void(0)">Histoire</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link fadein" href="">Photographies</a>
+                            <li id="gallery" className="nav-item">
+                                <a className="nav-link fadein" href="javascript:void(0)">Photographies</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link fadein" href="">Actualités</a>
+                            <li id="actualities" className="nav-item">
+                                <a className="nav-link fadein" href="javascript:void(0)">Actualités</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link fadein" href="">Commerces</a>
+                            <li id="shops" className="nav-item">
+                                <a className="nav-link fadein" href="javascript:void(0)">Commerces</a>
                             </li>
                         </ul>
                     </div>

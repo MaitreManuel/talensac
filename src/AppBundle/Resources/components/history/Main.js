@@ -3,6 +3,15 @@ import Parallax from 'parallax-js';
 
 class Main extends React.Component {
     componentDidMount() {
+        var nav_item = document.getElementsByClassName('nav-item');
+
+        for(var i = 0; i < nav_item.length; i++) {
+            nav_item[i].classList.remove('active');
+        }
+
+        document.querySelector('#history').classList.add('active');
+        localStorage.setItem('page', 'gallery');
+
         var scene = document.getElementById('scene'),
             butcher = document.getElementById('butcher'),
             parallaxInstance = new Parallax(scene),
