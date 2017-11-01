@@ -9,20 +9,15 @@ class Header extends React.Component {
             actualities = document.getElementById('actualities'),
             shops = document.getElementById('shops');
 
-        window.addEventListener('orientationchange', () => {
-            this.toggle_menu('ort_chg');
-        });
+        if(toggle_menu_elem && toggle_menu_elem !== null && toggle_menu_elem !== undefined) {
+            toggle_menu_elem.addEventListener('click', () => {
+                this.toggle_menu();
+            });
+        }
 
         if(home && home !== null && home !== undefined) {
             home.addEventListener('click', () => {
                 localStorage.setItem('page', 'home');
-                this.props.reload();
-            });
-        }
-
-        if(history && history !== null && history !== undefined) {
-            toggle_menu_elem.addEventListener('click', () => {
-                localStorage.setItem('page', 'history');
                 this.props.reload();
             });
         }

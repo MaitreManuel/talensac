@@ -21,8 +21,8 @@ class Main extends React.Component {
         return (
             <section id="Gallery">
                 <section className="p-absolute o-hidden wrapper-scene">
-                    <section id="scene" className="scene">
-                        <div className="img marche2" data-depth="0.6"></div>
+                    <section id="scene" className="scene" style={{backgroundImage: `url(bundles/fond.jpg)`}}>
+                        <div className="img marche2" style={{backgroundImage: `url(bundles/marche2.png)`}} data-depth="0.6"></div>
                     </section>
                 </section>
                 <section className="container-fluid custom-scroll opacity-dark oy-auto p-relative wrapper-content gallery">

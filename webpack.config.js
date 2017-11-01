@@ -54,7 +54,8 @@ module.exports = {
                         includePaths: [
                             path.resolve(resources , '/assets/'),
                             nodeModules
-                        ]
+                        ],
+                        sourceMap: false
                     }
                 }]
             }, {

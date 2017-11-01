@@ -10,7 +10,7 @@ class Main extends React.Component {
         }
 
         document.querySelector('#history').classList.add('active');
-        localStorage.setItem('page', 'gallery');
+        localStorage.setItem('page', 'history');
 
         var scene = document.getElementById('scene'),
             butcher = document.getElementById('butcher'),
@@ -24,9 +24,9 @@ class Main extends React.Component {
         return (
             <section id="History">
                 <section className="p-absolute o-hidden wrapper-scene">
-                    <section id="scene" className="scene">
-                        <div className="img background" data-depth="0.2"></div>
-                        <div className="img marche" data-depth="0.6"></div>
+                    <section id="scene" className="scene" style={{backgroundImage: `url(bundles/fond.jpg)`}}>
+                        <div className="img background" style={{backgroundImage: `url(bundles/background.jpg)`}}data-depth="0.2"></div>
+                        <div className="img marche" style={{backgroundImage: `url(bundles/marche.png)`}}data-depth="0.6"></div>
                     </section>
                 </section>
                 <section className="container-fluid p-relative opacity-medium wrapper-content">

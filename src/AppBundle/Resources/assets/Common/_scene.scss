@@ -6,7 +6,7 @@
     .img {
         background-position: center top;
         &.background {
-            background: url('/bundles/background.jpg');
+            // background: url('/bundles/background.jpg');
             background-size: cover;
             height: 75%;
             @media all and (min-width: 1201px) {
@@ -20,13 +20,13 @@
             }
         }
         &.marche {
-            background: url('/bundles/marche.png');
+            // background: url('/bundles/marche.png');
             background-size: cover;
             height: 110%;
             width: 110%;
         }
         &.marche2 {
-            background: url('/bundles/marche2.png');
+            // background: url('/bundles/marche2.png');
             background-size: cover;
             height: 100%;
             width: 110%;
