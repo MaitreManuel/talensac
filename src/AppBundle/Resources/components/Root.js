@@ -1,5 +1,6 @@
 import React from "react";
 
+import Actuality from "./actuality/Main.js";
 import Footer from "./common/Footer.js";
 import Gallery from "./gallery/Main.js";
 import Header from "./common/Header.js";
@@ -34,6 +35,7 @@ class Root extends React.Component {
         return (
             <section id="Root">
                 <Header reload={this.reload}/>
+                {(action === "actualities") && <Actuality/>}
                 {(action === "gallery") && <Gallery/>}
                 {(action === "history" || action === "home") && <History/>}
                 <Footer/>

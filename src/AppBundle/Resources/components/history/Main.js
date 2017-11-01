@@ -30,6 +30,11 @@ class Main extends React.Component {
                     </section>
                 </section>
                 <section className="container-fluid p-relative opacity-medium wrapper-content">
+                    <div className="row">
+                        <div className="col-12 mt-5 text-center">
+                            <h1>Histoire</h1>
+                        </div>
+                    </div>
                     <div className="row justify-content-center">
                         <div className="col-4 d-none d-md-block mt-5">
                             <section id="butcher" className="scene">
