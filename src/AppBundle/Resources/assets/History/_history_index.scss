@@ -44,5 +44,8 @@
     }
     .symbol {
         font-size: 5rem;
+        @media all and (max-width: 576px) {
+            font-size: 4.5rem;
+        }
     }
 }
