@@ -3,6 +3,7 @@ import bootstrap from 'bootstrap';
 import ScrollMagic from 'scrollmagic';
 
 import './common.scss';
+import './Home/home.js';
 
 jQuery(document).ready(() => {
     const chap00 = document.querySelector('#chapter-00');
@@ -26,6 +27,7 @@ jQuery(document).ready(() => {
     const decoy08 = document.querySelector('#decoy-08');
     const decoy09 = document.querySelector('#decoy-09');
     const decoy10 = document.querySelector('#decoy-10');
+    const gotop = document.querySelector('#gotop');
 
     // ScrollMagic
     const magicController = new ScrollMagic.Controller();
@@ -36,9 +38,11 @@ jQuery(document).ready(() => {
         }).on('enter', (event) => {
             chap00.classList.add('opac0');
             chap01.classList.remove('opac0');
+            gotop.classList.remove('opac0');
         }).on('leave', (event) => {
             chap00.classList.remove('opac0');
             chap01.classList.add('opac0');
+            gotop.classList.add('opac0');
         }).addTo(magicController);
     }
     if(chap02 !== null && chap02 !== undefined) {

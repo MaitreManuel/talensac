@@ -4,19 +4,8 @@ import Parallax from 'parallax-js';
 class Main extends React.Component {
     componentDidMount() {
         var nav_item = document.getElementsByClassName('nav-item'),
-            gotop = document.getElementById('gotop');
-
-        for(var i = 0; i < nav_item.length; i++) {
-            nav_item[i].classList.remove('active');
-        }
-
-        document.querySelector('#history').classList.add('active');
-        localStorage.setItem('page', 'history');
-
-        gotop.addEventListener('click', () => {
-            document.getElementById('chapters').scrollTop = 0;
-
-            var chapters = [
+            gotop = document.getElementById('gotop'),
+            chapters = [
                 document.getElementById('chapter-01'),
                 document.getElementById('chapter-02'),
                 document.getElementById('chapter-03'),
@@ -29,9 +18,27 @@ class Main extends React.Component {
                 document.getElementById('chapter-end')
             ];
 
+        setTimeout(() => {
             for(var i = 0; i < chapters.length; i++) {
-                chapters[i].classList.add('opac0');
+                chapters[i].classList.remove('d-none');
             }
+        }, 300);
+
+        for(var i = 0; i < nav_item.length; i++) {
+            nav_item[i].classList.remove('active');
+        }
+
+        document.querySelector('#history').classList.add('active');
+        localStorage.setItem('page', 'history');
+
+        gotop.addEventListener('click', () => {
+            document.getElementById('chapters').scrollTop = 0;
+
+            setTimeout(() => {
+                for(var i = 0; i < chapters.length; i++) {
+                    chapters[i].classList.add('opac0');
+                }
+            }, 50);
         });
 
         var scene = document.getElementById('scene'),
@@ -51,7 +58,7 @@ class Main extends React.Component {
                 <section className="container-fluid opacity-medium p-relative">
                     <div className="row">
                         <div className="col-12 text-right">
-                            <a id="gotop" href="javascript:void(0)">Remonter</a>
+                            <a id="gotop" href="javascript:void(0)" className="opac0">Remonter</a>
                         </div>
                     </div>
                 </section>
@@ -63,7 +70,7 @@ class Main extends React.Component {
                             <p className="symbol pulse">&#8675;</p>
                         </div>
                     </div>
-                    <div id="chapter-01" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                    <div id="chapter-01" className="row d-none justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-4"></div>
                         <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <h1>Marché de Talensac</h1>
@@ -77,7 +84,7 @@ class Main extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div id="chapter-02" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                    <div id="chapter-02" className="row d-none justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <h1>Les anciens abattoirs</h1>
                             <p>
@@ -93,7 +100,7 @@ class Main extends React.Component {
                         </div>
                         <div className="col-4"></div>
                     </div>
-                    <div id="chapter-03" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                    <div id="chapter-03" className="row d-none justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-4"></div>
                         <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
@@ -106,7 +113,7 @@ class Main extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div id="chapter-04" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                    <div id="chapter-04" className="row d-none justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
                                 En 1910, pour une question d'hygiène et d'aménagement urbain, la municipalité décide de transférer « La tuerie aux bestiaux »,
@@ -118,7 +125,7 @@ class Main extends React.Component {
                         </div>
                         <div className="col-4"></div>
                     </div>
-                    <div id="chapter-05" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                    <div id="chapter-05" className="row d-none justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-4"></div>
                         <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
@@ -128,7 +135,7 @@ class Main extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div id="chapter-06" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                    <div id="chapter-06" className="row d-none justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
                                 On opte pour la construction de nouveaux abattoirs intercommunaux sur un site de 2,6 hectares situé sur la commune de Rezé, à la
@@ -139,7 +146,7 @@ class Main extends React.Component {
                         </div>
                         <div className="col-4"></div>
                     </div>
-                    <div id="chapter-07" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                    <div id="chapter-07" className="row d-none justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-4"></div>
                         <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <h1>La construction du marché</h1>
@@ -154,7 +161,7 @@ class Main extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div id="chapter-08" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                    <div id="chapter-08" className="row d-none justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
                                 La démolition des abattoirs commence en juin 1934 et se poursuit jusqu'en novembre. Les travaux de construction vont ainsi s'échelonner trois ans. Ainsi,
@@ -166,7 +173,7 @@ class Main extends React.Component {
                         </div>
                         <div className="col-4"></div>
                     </div>
-                    <div id="chapter-09" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                    <div id="chapter-09" className="row d-none justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-4"></div>
                         <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
@@ -176,7 +183,7 @@ class Main extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div id="chapter-end" className="row p-fixed opac0">
+                    <div id="chapter-end" className="row d-none justify-content-center p-fixed opac0">
                         <div className="col-12 mt-lg-5 text-center">
                             <p className="symbol pulse">&#8673;</p>
                             <h3>Fin de lecture</h3>

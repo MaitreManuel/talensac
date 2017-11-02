@@ -18,8 +18,12 @@ class Root extends React.Component {
     }
 
     componentWillMount() {
+        var state = this.state;
+
         if(localStorage.getItem('page') == null) {
-            localStorage.setItem('page', 'history');
+            localStorage.setItem('page', 'home');
+            state.action = localStorage.getItem('page');
+            this.setState(state);
         }
     }
 
@@ -27,6 +31,7 @@ class Root extends React.Component {
         var state = this.state;
         state.action = localStorage.getItem('page');
         this.setState(state);
+        location.reload();
     }
 
     render() {

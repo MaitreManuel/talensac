@@ -19,10 +19,13 @@ class Main extends React.Component {
     render() {
         return (
             <section id="Home">
-                <section id="container-gsap" className="p-absolute o-hidden wrapper-scene">
+                <section className="p-absolute o-hidden wrapper-scene">
                     <section id="scene" className="scene" style={{backgroundImage: `url(bundles/fond.jpg)`}}>
                         <img className="img marche2" style={{backgroundImage: `url(bundles/marche2.png)`}} data-depth="0.6" />
                     </section>
+                </section>
+                <section className="p-absolute o-hidden wrapper-scene">
+                    <canvas id="canvas" width="800" height="800"></canvas>
                 </section>
                 <section className="container-fluid custom-scroll opacity-light oy-auto p-relative wrapper-content">
                     <div className="row justify-content-center mb-5 text-center text-md-left">
