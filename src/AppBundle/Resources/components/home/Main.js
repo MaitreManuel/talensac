@@ -21,7 +21,7 @@ class Main extends React.Component {
             <section id="Home">
                 <section className="p-absolute o-hidden wrapper-scene">
                     <section id="scene" className="scene" style={{backgroundImage: `url(bundles/fond.jpg)`}}>
-                        <img className="img marche2" style={{backgroundImage: `url(bundles/marche2.png)`}} data-depth="0.6" />
+                        <div className="img marche2" style={{backgroundImage: `url(bundles/marche2.png)`}} data-depth="0.6"> </div>
                     </section>
                 </section>
                 <section className="p-absolute o-hidden wrapper-scene">

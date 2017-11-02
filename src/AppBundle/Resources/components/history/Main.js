@@ -38,7 +38,7 @@ class Main extends React.Component {
                 for(var i = 0; i < chapters.length; i++) {
                     chapters[i].classList.add('opac0');
                 }
-            }, 50);
+            }, 200);
         });
 
         var scene = document.getElementById('scene'),
@@ -187,7 +187,7 @@ class Main extends React.Component {
                         <div className="col-12 mt-lg-5 text-center">
                             <p className="symbol pulse">&#8673;</p>
                             <h3>Fin de lecture</h3>
-                            <p>Cliquez sur remontez pour revenir au début</p>
+                            <p>Cliquez sur 'Remontez' pour revenir au début</p>
                         </div>
                     </div>
                     <div id="decoy-00" className="row">
