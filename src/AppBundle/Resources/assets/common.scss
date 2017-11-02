@@ -41,6 +41,9 @@ h1 {
     font-size: 4rem;
     word-wrap: break-word;
 }
+h2 {
+    font-size: 3rem;
+}
 h3 {
     font-size: 2.5rem;
 }
@@ -73,6 +76,12 @@ p {
 }
 .oy-hidden {
     overflow-y: hidden;
+}
+.opac0 {
+    opacity: 0;
+}
+.opac1 {
+    opacity: 1;
 }
 .p-absolute {
     position: absolute;

@@ -2,4 +2,19 @@
     background-position: top center;
     background-size: cover;
     height: calc(100vh - 80px);
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    ::-webkit-scrollbar-thumb {
+        display: none;
+    }
+    #chapter-end {
+        height: 100%;
+        margin-top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+    .decoy {
+        height: 1000px;
+    }
 }
