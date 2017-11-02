@@ -3,7 +3,8 @@ import Parallax from 'parallax-js';
 
 class Main extends React.Component {
     componentDidMount() {
-        var nav_item = document.getElementsByClassName('nav-item');
+        var nav_item = document.getElementsByClassName('nav-item'),
+            gotop = document.getElementById('gotop');
 
         for(var i = 0; i < nav_item.length; i++) {
             nav_item[i].classList.remove('active');
@@ -12,27 +13,59 @@ class Main extends React.Component {
         document.querySelector('#history').classList.add('active');
         localStorage.setItem('page', 'history');
 
+        gotop.addEventListener('click', () => {
+            document.getElementById('chapters').scrollTop = 0;
+
+            var chapters = [
+                document.getElementById('chapter-01'),
+                document.getElementById('chapter-02'),
+                document.getElementById('chapter-03'),
+                document.getElementById('chapter-04'),
+                document.getElementById('chapter-05'),
+                document.getElementById('chapter-06'),
+                document.getElementById('chapter-07'),
+                document.getElementById('chapter-08'),
+                document.getElementById('chapter-09'),
+                document.getElementById('chapter-end')
+            ];
+
+            for(var i = 0; i < chapters.length; i++) {
+                chapters[i].classList.add('opac0');
+            }
+        });
+
         var scene = document.getElementById('scene'),
-            // butcher = document.getElementById('butcher'),
             parallaxInstance = new Parallax(scene);
-            // parallaxButcher = new Parallax(butcher);
 
         parallaxInstance.limit(30, 15);
-        // parallaxButcher.limit(15, 7);
     }
     render() {
         return (
             <section id="History">
                 <section className="p-absolute o-hidden wrapper-scene">
                     <section id="scene" className="scene" style={{backgroundImage: `url(bundles/fond.jpg)`}}>
-                        <div className="img background" style={{backgroundImage: `url(bundles/background.jpg)`}}data-depth="0.2"></div>
-                        <div className="img marche" style={{backgroundImage: `url(bundles/marche.png)`}}data-depth="0.6"></div>
+                        <div className="img background" style={{backgroundImage: `url(bundles/background.jpg)`}} data-depth="0.2"></div>
+                        <div className="img marche" style={{backgroundImage: `url(bundles/marche.png)`}} data-depth="0.6"></div>
                     </section>
                 </section>
-                <section className="container-fluid custom-scroll opacity-medium oy-auto p-relative wrapper-content">
-                    <div id="chapter-01" className="row justify-content-center mt-5 p-fixed">
+                <section className="container-fluid opacity-medium p-relative">
+                    <div className="row">
+                        <div className="col-12 text-right">
+                            <a id="gotop" href="javascript:void(0)">Remonter</a>
+                        </div>
+                    </div>
+                </section>
+                <section id="chapters" className="container-fluid custom-scroll opacity-medium oy-auto p-relative wrapper-content">
+                    <div id="chapter-00" className="row justify-content-center mt-lg-5 p-fixed">
+                        <div className="col-12 mt-lg-5 text-center">
+                            <h3>Début de lecture</h3>
+                            <p>Scrollez vers le bas pour commencer la lecture</p>
+                            <p className="symbol pulse">&#8675;</p>
+                        </div>
+                    </div>
+                    <div id="chapter-01" className="row justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-4"></div>
-                        <div className="col-12 col-md-6 col-lg-4 mt-5">
+                        <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <h1>Marché de Talensac</h1>
                             <p>
                                 Le vendredi 8 janvier 1937, Auguste Pageot , député-maire de Nantes inaugurait le nouveau marché de Talensac.
@@ -44,9 +77,9 @@ class Main extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div id="chapter-02" className="row justify-content-center mt-5 p-fixed opac0">
-                        <div className="col-12 col-md-6 col-lg-4 mt-5">
-                            <h2>Les anciens abattoirs</h2>
+                    <div id="chapter-02" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                        <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
+                            <h1>Les anciens abattoirs</h1>
                             <p>
                                 Le marché se dresse à l'emplacement des anciens abattoirs municipaux ouvert en 1829 sur le site d'une tenue agricole
                                 acquise par la ville au début du xixe siècle.
@@ -60,9 +93,9 @@ class Main extends React.Component {
                         </div>
                         <div className="col-4"></div>
                     </div>
-                    <div id="chapter-03" className="row justify-content-center mt-5 p-fixed opac0">
+                    <div id="chapter-03" className="row justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-4"></div>
-                        <div className="col-12 col-md-6 col-lg-4 mt-5">
+                        <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
                                 Dès 1880, le « Conseil Central d’Hygiène Publique et de Salubrité de la Loire-Inférieure » (CCHPS) nomme une commission pour
                                 étudier « le déplacement de l'abattoir de Nantes ». Le rapport de 16 pages qui est remis en 1882 et imprimé en 1899, statut
@@ -73,8 +106,8 @@ class Main extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div id="chapter-04" className="row justify-content-center mt-5 p-fixed opac0">
-                        <div className="col-12 col-md-6 col-lg-4 mt-5">
+                    <div id="chapter-04" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                        <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
                                 En 1910, pour une question d'hygiène et d'aménagement urbain, la municipalité décide de transférer « La tuerie aux bestiaux »,
                                 comme l'avaient surnommés les nantais à l'époque, sur l'île Beaulieu (dans la partie est de l'actuelle île de Nantes) et en en
@@ -85,9 +118,9 @@ class Main extends React.Component {
                         </div>
                         <div className="col-4"></div>
                     </div>
-                    <div id="chapter-05" className="row justify-content-center mt-5 p-fixed opac0">
+                    <div id="chapter-05" className="row justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-4"></div>
-                        <div className="col-12 col-md-6 col-lg-4 mt-5">
+                        <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
                                 Il faudra attendre l'entre-deux-guerres pour que la question du transfert des abattoirs soit remise à l'ordre du jour, dans le cadre
                                 d'une réorganisation des marchés sur Nantes : le marché de la rue de Feltre et celui de la place Saint-Similien sont supprimés au grand
@@ -95,8 +128,8 @@ class Main extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div id="chapter-06" className="row justify-content-center mt-5 p-fixed opac0">
-                        <div className="col-12 col-md-6 col-lg-4 mt-5">
+                    <div id="chapter-06" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                        <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
                                 On opte pour la construction de nouveaux abattoirs intercommunaux sur un site de 2,6 hectares situé sur la commune de Rezé, à la
                                 confluence de la Loire et de la Sèvre Nantaise, sur les basses prairies de la « Tête-des-Mottes ». Les plans sont établis en 1923 et la
@@ -106,10 +139,10 @@ class Main extends React.Component {
                         </div>
                         <div className="col-4"></div>
                     </div>
-                    <div id="chapter-07" className="row justify-content-center mt-5 p-fixed opac0">
+                    <div id="chapter-07" className="row justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-4"></div>
-                        <div className="col-12 col-md-6 col-lg-4 mt-5">
-                            <h2>La conception et la construction du marché</h2>
+                        <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
+                            <h1>La construction du marché</h1>
                             <p>
                                 Le transfert de l'activité de l'abattoir de Talensac vers son nouveau site a lieu le 16 octobre 1933.
                                 <br/>
@@ -121,10 +154,10 @@ class Main extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div id="chapter-08" className="row justify-content-center mt-5 p-fixed opac0">
-                        <div className="col-12 col-md-6 col-lg-4 mt-5">
+                    <div id="chapter-08" className="row justify-content-center mt-lg-5 p-fixed opac0">
+                        <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
-                                La démolition des abattoirs commence en juin 1934 et se poursuit jusqu'en novembre3. Les travaux de construction vont ainsi s'échelonner trois ans. Ainsi,
+                                La démolition des abattoirs commence en juin 1934 et se poursuit jusqu'en novembre. Les travaux de construction vont ainsi s'échelonner trois ans. Ainsi,
                                 en août 1935, les piliers de soutènement sont réalisés. En février 1936, les parois latérales sont construites : des murs en briques jaunes sur un
                                 soubassement de briques rouges de Chartres (matériau déjà utilisé pour le lycée Gabriel-Guist'hau notamment4) enduit d'un crépissage, tandis que les loges
                                 en briques tapissées de petits carreaux sont achevés. À l'automne 1936, le terrain est planté de rangées de platanes. La construction du marché est assortie
@@ -133,9 +166,9 @@ class Main extends React.Component {
                         </div>
                         <div className="col-4"></div>
                     </div>
-                    <div id="chapter-09" className="row justify-content-center mt-5 p-fixed opac0">
+                    <div id="chapter-09" className="row justify-content-center mt-lg-5 p-fixed opac0">
                         <div className="col-4"></div>
-                        <div className="col-12 col-md-6 col-lg-4 mt-5">
+                        <div className="col-12 col-md-6 col-lg-4 mt-lg-5">
                             <p>
                                 Le marché qui aura couté 2 700 000 millions de francs de l'époque4, sera inauguré le 8 janvier 1937 par le successeur de Léopold Cassegrain, Auguste
                                 Pageot. Idéalement situé à proximité de la route de Rennes (dont la rue Paul-Bellamy forme un ancien tronçon), par sa taille et la diversité de ses
@@ -144,9 +177,14 @@ class Main extends React.Component {
                         </div>
                     </div>
                     <div id="chapter-end" className="row p-fixed opac0">
-                        <div className="col-12 mt-5 text-center">
-                            <h3 className="glitch" data-text="Fin de lecture">Fin de lecture</h3>
+                        <div className="col-12 mt-lg-5 text-center">
+                            <p className="symbol pulse">&#8673;</p>
+                            <h3>Fin de lecture</h3>
+                            <p>Cliquez sur remontez pour revenir au début</p>
                         </div>
+                    </div>
+                    <div id="decoy-00" className="row">
+                        <div className="col-12 decoy"></div>
                     </div>
                     <div id="decoy-01" className="row">
                         <div className="col-12 decoy"></div>

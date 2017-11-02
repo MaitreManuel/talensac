@@ -5,6 +5,7 @@ import ScrollMagic from 'scrollmagic';
 import './common.scss';
 
 jQuery(document).ready(() => {
+    const chap00 = document.querySelector('#chapter-00');
     const chap01 = document.querySelector('#chapter-01');
     const chap02 = document.querySelector('#chapter-02');
     const chap03 = document.querySelector('#chapter-03');
@@ -15,6 +16,7 @@ jQuery(document).ready(() => {
     const chap08 = document.querySelector('#chapter-08');
     const chap09 = document.querySelector('#chapter-09');
     const chapend = document.querySelector('#chapter-end');
+    const decoy01 = document.querySelector('#decoy-01');
     const decoy02 = document.querySelector('#decoy-02');
     const decoy03 = document.querySelector('#decoy-03');
     const decoy04 = document.querySelector('#decoy-04');
@@ -28,6 +30,17 @@ jQuery(document).ready(() => {
     // ScrollMagic
     const magicController = new ScrollMagic.Controller();
 
+    if(chap01 !== null && chap01 !== undefined) {
+        new ScrollMagic.Scene({
+            triggerElement: decoy01
+        }).on('enter', (event) => {
+            chap00.classList.add('opac0');
+            chap01.classList.remove('opac0');
+        }).on('leave', (event) => {
+            chap00.classList.remove('opac0');
+            chap01.classList.add('opac0');
+        }).addTo(magicController);
+    }
     if(chap02 !== null && chap02 !== undefined) {
         new ScrollMagic.Scene({
             triggerElement: decoy02

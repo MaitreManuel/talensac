@@ -8,13 +8,41 @@
     ::-webkit-scrollbar-thumb {
         display: none;
     }
+    h1 {
+        @media all and (max-width: 576px) {
+            font-size: 2rem;
+        }
+    }
+    #chapters {
+        #chapter-00 {
+            width: 100%;
+        }
+        .p-fixed {
+            p {
+                @media all and (max-width: 576px) {
+                    font-size: 16px;
+                }
+            }
+            -webkit-transition: opacity .2s;
+            transition: opacity .2s;
+        }
+    }
     #chapter-end {
         height: 100%;
         margin-top: 50%;
         transform: translateY(-50%);
         width: 100%;
+        div {
+            margin-top: 100%;
+        }
+    }
+    #gotop {
+        color: $white;
     }
     .decoy {
         height: 1000px;
+    }
+    .symbol {
+        font-size: 5rem;
     }
 }
