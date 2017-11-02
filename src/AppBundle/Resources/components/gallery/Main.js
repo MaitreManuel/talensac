@@ -25,13 +25,13 @@ class Main extends React.Component {
                         <div className="img marche2" style={{backgroundImage: `url(bundles/marche2.png)`}} data-depth="0.6"></div>
                     </section>
                 </section>
-                <section className="container-fluid custom-scroll opacity-dark oy-auto p-relative wrapper-content gallery">
+                <section className="container-fluid custom-scroll opacity-dark oy-auto p-relative wrapper-content">
                     <div className="row">
                         <div className="col-12 mt-5 text-center">
                             <h1>Photographies</h1>
                         </div>
                     </div>
-                    <div className="row justify-content-center mb-5 text-center text-md-left gallery">
+                    <div className="row justify-content-center mb-5 text-center text-md-left">
                         <div className="col-12 col-md-9 mt-5">
                             <h3>L'ancien marché</h3>
                             <div className="row">

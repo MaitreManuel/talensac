@@ -17,31 +17,37 @@ class Header extends React.Component {
 
         if(home && home !== null && home !== undefined) {
             home.addEventListener('click', () => {
+                if(window.innerWidth < 992) {
+                    toggle_menu_elem.click();
+                }
                 localStorage.setItem('page', 'home');
                 this.props.reload();
             });
         }
         if(history && history !== null && history !== undefined) {
             history.addEventListener('click', () => {
+                if(window.innerWidth < 992) {
+                    toggle_menu_elem.click();
+                }
                 localStorage.setItem('page', 'history');
                 this.props.reload();
             });
         }
         if(gallery && gallery !== null && gallery !== undefined) {
             gallery.addEventListener('click', () => {
+                if(window.innerWidth < 992) {
+                    toggle_menu_elem.click();
+                }
                 localStorage.setItem('page', 'gallery');
                 this.props.reload();
             });
         }
         if(actualities && actualities !== null && actualities !== undefined) {
             actualities.addEventListener('click', () => {
+                if(window.innerWidth < 992) {
+                    toggle_menu_elem.click();
+                }
                 localStorage.setItem('page', 'actualities');
-                this.props.reload();
-            });
-        }
-        if(shops && shops !== null && shops !== undefined) {
-            shops.addEventListener('click', () => {
-                localStorage.setItem('page', 'shops');
                 this.props.reload();
             });
         }
@@ -78,9 +84,6 @@ class Header extends React.Component {
                             </li>
                             <li id="actualities" className="nav-item">
                                 <a className="nav-link fadein" href="javascript:void(0)">Actualités</a>
-                            </li>
-                            <li id="shops" className="nav-item">
-                                <a className="nav-link fadein" href="javascript:void(0)">Commerces</a>
                             </li>
                         </ul>
                     </div>

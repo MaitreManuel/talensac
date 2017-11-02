@@ -1,0 +1,22 @@
+#Actuality {
+    background: $white;
+    background-position: top center;
+    background-size: cover;
+    height: calc(100vh - 80px);
+    .section {
+        background: $greyLight;
+        color: $black;
+        .text {
+            min-height: 222px;
+            padding: 10px 15px;
+        }
+        .title {
+            background: $blueLight;
+            min-height: 86px;
+            padding: 10px 15px;
+            h5 {
+                margin: 0;
+            }
+        }
+    }
+}
