@@ -8,9 +8,9 @@
 @import 'Common/footer';
 @import 'Common/header';
 @import 'Common/scene';
-@import 'Actuality/actuality_index';
 @import 'Gallery/gallery_index';
 @import 'History/history_index';
+@import 'Home/home_index';
 
 ::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -52,6 +52,9 @@ p {
 }
 .opacity-medium {
     background-color: rgba(0, 0, 0, 0.5);
+}
+.opacity-light {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 .o-auto {
     overflow: auto;

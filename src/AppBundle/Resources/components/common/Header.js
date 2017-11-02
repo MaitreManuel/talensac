@@ -5,9 +5,7 @@ class Header extends React.Component {
         var toggle_menu_elem = document.getElementById('toggle-menu'),
             home = document.getElementById('home'),
             history = document.getElementById('history'),
-            gallery = document.getElementById('gallery'),
-            actualities = document.getElementById('actualities'),
-            shops = document.getElementById('shops');
+            gallery = document.getElementById('gallery');
 
         if(toggle_menu_elem && toggle_menu_elem !== null && toggle_menu_elem !== undefined) {
             toggle_menu_elem.addEventListener('click', () => {
@@ -42,15 +40,6 @@ class Header extends React.Component {
                 this.props.reload();
             });
         }
-        if(actualities && actualities !== null && actualities !== undefined) {
-            actualities.addEventListener('click', () => {
-                if(window.innerWidth < 992) {
-                    toggle_menu_elem.click();
-                }
-                localStorage.setItem('page', 'actualities');
-                this.props.reload();
-            });
-        }
     }
 
     toggle_menu(trigger) {
@@ -81,9 +70,6 @@ class Header extends React.Component {
                             </li>
                             <li id="gallery" className="nav-item">
                                 <a className="nav-link fadein" href="javascript:void(0)">Photographies</a>
-                            </li>
-                            <li id="actualities" className="nav-item">
-                                <a className="nav-link fadein" href="javascript:void(0)">Actualités</a>
                             </li>
                         </ul>
                     </div>
